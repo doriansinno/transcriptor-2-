@@ -1,0 +1,6 @@
+{
+  "server_url": "http://localhost:4000",
+  "license_key": "",
+  "microphone_id": null,
+  "whisper_model": "base"
+}
