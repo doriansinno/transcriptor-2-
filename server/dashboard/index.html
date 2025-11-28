@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transcriptor Admin Dashboard</title>
+    <link rel="stylesheet" href="/admin-dashboard/dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Transcriptor Lizenzverwaltung</h1>
+        <p>Passwort wird als Bearer Token gesendet. Bewahre es sicher auf.</p>
+        <div class="password-row">
+          <input type="password" id="password" placeholder="Admin-Passwort" />
+          <button id="savePassword">Speichern</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Neue Lizenz erstellen</h2>
+        <div class="form-grid">
+          <label for="key">Key</label>
+          <input id="key" placeholder="ABC-123-XYZ" />
+          <label for="expires">Ablaufdatum</label>
+          <input id="expires" type="date" />
+          <label for="maxRequests">Maximale Anfragen</label>
+          <input id="maxRequests" type="number" value="1000" min="1" />
+        </div>
+        <button id="createBtn">Erstellen</button>
+        <p class="hint">Tipps: eindeutige Keys wählen, Ablauf klar definieren.</p>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Lizenzübersicht</h2>
+          <button id="refreshBtn">Aktualisieren</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Ablaufdatum</th>
+              <th>Anfragen</th>
+              <th>Status</th>
+              <th>Aktionen</th>
+            </tr>
+          </thead>
+          <tbody id="licenseTable"></tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>Sicherheitshinweis</h2>
+        <ul>
+          <li>Tool ist ausschließlich für eigene Mitschriften gedacht.</li>
+          <li>Keine heimlichen Aufnahmen – respektiere Privatsphäre.</li>
+          <li>Setze eine starke ADMIN_PASSWORD-Umgebungsvariable.</li>
+        </ul>
+      </section>
+    </div>
+    <script src="/admin-dashboard/dashboard.js"></script>
+  </body>
+</html>
